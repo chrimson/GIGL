@@ -8,19 +8,19 @@ Software that transforms an execution graph path from MITRE ATT&amp;CK into Baye
 ## Environments
 * Ubuntu 22
 
-## Download, Pull Requirements and Register Package
+## Download
 ```
 git clone https://github.com/chrimson/GGIL.git
-cd GGIL
 ```
 
-## Simulate
+## Execute
 ```
+cd GGIL
 python3 mitre_attack_matrix_2_unnbayes_network.py
 ```
 
 ## Documentation
-[CYSE-650-PROJECT-GROUP-3.pdf](CYSE-650-PROJECT-GROUP-3.pdf)
+[Tutorial.pdf](Tutorial.pdf)
 
 ## Reference
 [https://attack.mitre.org](https://attack.mitre.org)  
