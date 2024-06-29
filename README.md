@@ -1,5 +1,5 @@
-# GGIL · Group 3 Project
-### Pratam (G)avaravarapu · Harshya (G)avaravarapu · Rayan (I)ssa · Chris (L)imson
+# GIGL · Group 3 Project
+### Pratam (G)avaravarapu · Rayan (I)ssa · Harshya (G)avaravarapu · Chris (L)imson
 GMU CYSE 650 Cyber Risk Modeling and Analysis Tools  
 Summer 2024 · Alexandre de Barros Barreto, Ph.D.  
 
