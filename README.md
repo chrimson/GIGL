@@ -10,12 +10,12 @@ Software that transforms an execution graph path from MITRE ATT&amp;CK into Baye
 
 ## Download
 ```
-git clone https://github.com/chrimson/GGIL.git
+git clone https://github.com/chrimson/GIGL.git
 ```
 
 ## Execute
 ```
-cd GGIL
+cd GIGL
 python3 mitre_attack_matrix_2_unnbayes_network.py
 ```
 
