@@ -1,9 +1,10 @@
 import json
 import numpy as np
+import sys
 from pgmpy.models import BayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
+from pgmpy.global_vars import logger
 
-  
 def assign_probability(score):
     if score == 1:
         return 0.5  # 50% chance - used in one of two attacks
@@ -88,7 +89,8 @@ def export_to_net(model, filename):
             f.write(";\n}\n")
 
 def main():
-    json_file = r"C:\Users\prata\Downloads\layer_by_operation.json"
+    logger.disabled = True
+    json_file = sys.argv[1]
     with open(json_file, 'r') as f:
         data = json.load(f)
     techniques = data['techniques']
@@ -96,11 +98,12 @@ def main():
     
     # Check if the model is valid
     if model.check_model():
-        print("The Bayesian Network model is valid.")
+        print("Bayesian Network model is valid")
     else:
-        print("The Bayesian Network model is not valid.")
+        print("Bayesian Network model is not valid")
     
     # Export to .net file
-    export_to_net(model, r"C:\Users\prata\Downloads\mitre_attack_bayesian.net")
-    print("Bayesian Network exported to mitre_attack_bayesian.net")
+    export_to_net(model, sys.argv[2])
+    print("Bayesian Network exported")
+
 main()

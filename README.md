@@ -14,7 +14,7 @@ git clone https://github.com/chrimson/GIGL.git
 ```
 cd GIGL
 pip install pgmpy
-python3 start.py
+python3 start.py layer_by_operation.json mitre_attack_bayesian.net
 ```
 
 ## Documentation
