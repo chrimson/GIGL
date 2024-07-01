@@ -1,0 +1,313 @@
+net
+{
+}
+node T1557
+{
+    states = ("False" "True");
+    label = "T1557";
+    position = (447 601);
+}
+node T1583
+{
+    states = ("False" "True");
+    label = "T1583";
+    position = (472 592);
+}
+node T1071
+{
+    states = ("False" "True");
+    label = "T1071";
+    position = (349 154);
+}
+node T1659
+{
+    states = ("False" "True");
+    label = "T1659";
+    position = (106 82);
+}
+node T1010
+{
+    states = ("False" "True");
+    label = "T1010";
+    position = (814 345);
+}
+node T1092
+{
+    states = ("False" "True");
+    label = "T1092";
+    position = (704 62);
+}
+node T1595
+{
+    states = ("False" "True");
+    label = "T1595";
+    position = (0 534);
+}
+node T1548
+{
+    states = ("False" "True");
+    label = "T1548";
+    position = (587 663);
+}
+node T1087
+{
+    states = ("False" "True");
+    label = "T1087";
+    position = (937 959);
+}
+node T1059
+{
+    states = ("False" "True");
+    label = "T1059";
+    position = (10 853);
+}
+node T1020
+{
+    states = ("False" "True");
+    label = "T1020";
+    position = (395 562);
+}
+node T1210
+{
+    states = ("False" "True");
+    label = "T1210";
+    position = (259 105);
+}
+node T1098
+{
+    states = ("False" "True");
+    label = "T1098";
+    position = (17 298);
+}
+node T1531
+{
+    states = ("False" "True");
+    label = "T1531";
+    position = (390 439);
+}
+node T1650
+{
+    states = ("False" "True");
+    label = "T1650";
+    position = (204 228);
+}
+node T1651
+{
+    states = ("False" "True");
+    label = "T1651";
+    position = (134 280);
+}
+node T1134
+{
+    states = ("False" "True");
+    label = "T1134";
+    position = (600 613);
+}
+node Root_credential-access
+{
+    states = ("False" "True");
+    label = "Root_credential-access";
+    position = (936 625);
+}
+node Root_collection
+{
+    states = ("False" "True");
+    label = "Root_collection";
+    position = (172 0);
+}
+node Root_resource-development
+{
+    states = ("False" "True");
+    label = "Root_resource-development";
+    position = (950 198);
+}
+node Root_command-and-control
+{
+    states = ("False" "True");
+    label = "Root_command-and-control";
+    position = (409 888);
+}
+node Root_initial-access
+{
+    states = ("False" "True");
+    label = "Root_initial-access";
+    position = (652 591);
+}
+node Root_discovery
+{
+    states = ("False" "True");
+    label = "Root_discovery";
+    position = (588 780);
+}
+node Root_reconnaissance
+{
+    states = ("False" "True");
+    label = "Root_reconnaissance";
+    position = (718 997);
+}
+node Root_privilege-escalation
+{
+    states = ("False" "True");
+    label = "Root_privilege-escalation";
+    position = (29 185);
+}
+node Root_defense-evasion
+{
+    states = ("False" "True");
+    label = "Root_defense-evasion";
+    position = (425 169);
+}
+node Root_execution
+{
+    states = ("False" "True");
+    label = "Root_execution";
+    position = (193 226);
+}
+node Root_exfiltration
+{
+    states = ("False" "True");
+    label = "Root_exfiltration";
+    position = (191 867);
+}
+node Root_lateral-movement
+{
+    states = ("False" "True");
+    label = "Root_lateral-movement";
+    position = (974 455);
+}
+node Root_persistence
+{
+    states = ("False" "True");
+    label = "Root_persistence";
+    position = (956 57);
+}
+node Root_impact
+{
+    states = ("False" "True");
+    label = "Root_impact";
+    position = (816 278);
+}
+potential_for_attack (T1557 | Root_credential-access Root_collection)
+{
+    data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1583 | Root_resource-development)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1071 | Root_command-and-control)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1659 | Root_command-and-control Root_initial-access)
+{
+    data = (0.000000 0.000000 0.000000 0.000000 1.000000 1.000000 1.000000 1.000000);
+}
+potential_for_attack (T1010 | Root_discovery)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1092 | Root_command-and-control)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1595 | Root_reconnaissance)
+{
+    data = (0.000000 0.000000 1.000000 1.000000);
+}
+potential_for_attack (T1548 | Root_privilege-escalation Root_defense-evasion)
+{
+    data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1087 | Root_discovery)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1059 | Root_execution)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1020 | Root_exfiltration)
+{
+    data = (0.000000 0.000000 1.000000 1.000000);
+}
+potential_for_attack (T1210 | Root_lateral-movement)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1098 | Root_privilege-escalation Root_persistence)
+{
+    data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1531 | Root_impact)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1650 | Root_resource-development)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1651 | Root_execution)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (T1134 | Root_privilege-escalation Root_defense-evasion)
+{
+    data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
+}
+potential_for_attack (Root_credential-access)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_collection)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_resource-development)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_command-and-control)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_initial-access)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_discovery)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_reconnaissance)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_privilege-escalation)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_defense-evasion)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_execution)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_exfiltration)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_lateral-movement)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_persistence)
+{
+    data = (0.500000 0.500000);
+}
+potential_for_attack (Root_impact)
+{
+    data = (0.500000 0.500000);
+}
