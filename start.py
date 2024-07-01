@@ -79,7 +79,7 @@ def export_to_net(model, filename):
         for cpd in model.get_cpds():
             node = cpd.variable
             parents = model.get_parents(node)
-            f.write(f"potential_for_attack ({node}")
+            f.write(f"potential ({node}")
             if parents:
                 f.write(f" | {' '.join(parents)}")
             f.write(")\n{\n")
