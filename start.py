@@ -5,8 +5,6 @@ from pgmpy.models import BayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.global_vars import logger
 
-TECH_MAP = {}
-
 def assign_probability(score):
     if score == 1:
         return 0.5  # 50% chance - used in one of two attacks
@@ -23,9 +21,7 @@ def create_bayesian_network(techniques):
     # Group techniques by tactic
     tactics = {}
     for technique in techniques:
-        tech_id = technique['techniqueID']
-        if tech_id in TECH_MAP:
-            tech_id = TECH_MAP[tech_id].replace(' ', '_').replace('-', '_')
+        tech_id = technique['name']
         model.add_node(tech_id)
         tactic = technique['tactic'].replace('-', '_').title()
         if tactic not in tactics:
@@ -40,9 +36,7 @@ def create_bayesian_network(techniques):
 
     # Add CPDs
     for technique in techniques:
-        node = technique['techniqueID']
-        if node in TECH_MAP:
-            node = TECH_MAP[node].replace(' ', '_').replace('-', '_')
+        node = technique['name']
         prob = assign_probability(technique['score'])
         parents = model.get_parents(node)
 
@@ -73,12 +67,10 @@ def export_to_net(model, filename):
         y = 0
         # Write node definitions
         for node in model.nodes():
-            if node in TECH_MAP:
-                node = TECH_MAP[node].replace(' ', '_').replace('-', '_')
             if x > 1000:
-                x = 0
+                x = np.random.randint(0, 200)
                 y += 150
-            x += 10*len(node)
+            x += 200
             f.write(f"node {node}\n")
             f.write("{\n")
             f.write("    states = (\"False\" \"True\");\n")
@@ -105,6 +97,7 @@ def main():
     with open(json_file, 'r') as f:
         data = json.load(f)
 
+    tech_map = {}
     stix_file = 'enterprise-attack-15.1.json'
     with open(stix_file, 'r') as f:
         stix = json.load(f)
@@ -112,9 +105,11 @@ def main():
         if object['type'] == 'attack-pattern':
             for xref in object['external_references']:
                 if xref['source_name'] == 'mitre-attack':
-                    TECH_MAP[xref['external_id']] = object['name']
+                    tech_map[xref['external_id']] = object['name'].replace(' ', '_').replace('-', '_')
 
     techniques = data['techniques']
+    for technique in techniques:
+        technique['name'] = tech_map[technique['techniqueID']]
     model = create_bayesian_network(techniques)
     
     # Check if the model is valid

@@ -5,187 +5,187 @@ node Adversary_in_the_Middle
 {
     states = ("False" "True");
     label = "Adversary_in_the_Middle";
-    position = (230 0);
+    position = (200 0);
 }
 node Acquire_Infrastructure
 {
     states = ("False" "True");
     label = "Acquire_Infrastructure";
-    position = (450 0);
+    position = (400 0);
 }
 node Application_Layer_Protocol
 {
     states = ("False" "True");
     label = "Application_Layer_Protocol";
-    position = (710 0);
+    position = (600 0);
 }
 node Content_Injection
 {
     states = ("False" "True");
     label = "Content_Injection";
-    position = (880 0);
+    position = (800 0);
 }
 node Application_Window_Discovery
 {
     states = ("False" "True");
     label = "Application_Window_Discovery";
-    position = (1160 0);
+    position = (1000 0);
 }
 node Communication_Through_Removable_Media
 {
     states = ("False" "True");
     label = "Communication_Through_Removable_Media";
-    position = (370 150);
+    position = (1200 0);
 }
 node Active_Scanning
 {
     states = ("False" "True");
     label = "Active_Scanning";
-    position = (520 150);
+    position = (357 150);
 }
 node Abuse_Elevation_Control_Mechanism
 {
     states = ("False" "True");
     label = "Abuse_Elevation_Control_Mechanism";
-    position = (850 150);
+    position = (557 150);
 }
 node Account_Discovery
 {
     states = ("False" "True");
     label = "Account_Discovery";
-    position = (1020 150);
+    position = (757 150);
 }
 node Command_and_Scripting_Interpreter
 {
     states = ("False" "True");
     label = "Command_and_Scripting_Interpreter";
-    position = (330 300);
+    position = (957 150);
 }
 node Automated_Exfiltration
 {
     states = ("False" "True");
     label = "Automated_Exfiltration";
-    position = (550 300);
+    position = (1157 150);
 }
 node Exploitation_of_Remote_Services
 {
     states = ("False" "True");
     label = "Exploitation_of_Remote_Services";
-    position = (860 300);
+    position = (276 300);
 }
 node Account_Manipulation
 {
     states = ("False" "True");
     label = "Account_Manipulation";
-    position = (1060 300);
+    position = (476 300);
 }
 node Account_Access_Removal
 {
     states = ("False" "True");
     label = "Account_Access_Removal";
-    position = (220 450);
+    position = (676 300);
 }
 node Acquire_Access
 {
     states = ("False" "True");
     label = "Acquire_Access";
-    position = (360 450);
+    position = (876 300);
 }
 node Cloud_Administration_Command
 {
     states = ("False" "True");
     label = "Cloud_Administration_Command";
-    position = (640 450);
+    position = (1076 300);
 }
 node Access_Token_Manipulation
 {
     states = ("False" "True");
     label = "Access_Token_Manipulation";
-    position = (890 450);
+    position = (253 450);
 }
 node Credential_Access
 {
     states = ("False" "True");
     label = "Credential_Access";
-    position = (1060 450);
+    position = (453 450);
 }
 node Collection
 {
     states = ("False" "True");
     label = "Collection";
-    position = (100 600);
+    position = (653 450);
 }
 node Resource_Development
 {
     states = ("False" "True");
     label = "Resource_Development";
-    position = (300 600);
+    position = (853 450);
 }
 node Command_And_Control
 {
     states = ("False" "True");
     label = "Command_And_Control";
-    position = (490 600);
+    position = (1053 450);
 }
 node Initial_Access
 {
     states = ("False" "True");
     label = "Initial_Access";
-    position = (630 600);
+    position = (342 600);
 }
 node Discovery
 {
     states = ("False" "True");
     label = "Discovery";
-    position = (720 600);
+    position = (542 600);
 }
 node Reconnaissance
 {
     states = ("False" "True");
     label = "Reconnaissance";
-    position = (860 600);
+    position = (742 600);
 }
 node Privilege_Escalation
 {
     states = ("False" "True");
     label = "Privilege_Escalation";
-    position = (1060 600);
+    position = (942 600);
 }
 node Defense_Evasion
 {
     states = ("False" "True");
     label = "Defense_Evasion";
-    position = (150 750);
+    position = (1142 600);
 }
 node Execution
 {
     states = ("False" "True");
     label = "Execution";
-    position = (240 750);
+    position = (380 750);
 }
 node Exfiltration
 {
     states = ("False" "True");
     label = "Exfiltration";
-    position = (360 750);
+    position = (580 750);
 }
 node Lateral_Movement
 {
     states = ("False" "True");
     label = "Lateral_Movement";
-    position = (520 750);
+    position = (780 750);
 }
 node Persistence
 {
     states = ("False" "True");
     label = "Persistence";
-    position = (630 750);
+    position = (980 750);
 }
 node Impact
 {
     states = ("False" "True");
     label = "Impact";
-    position = (690 750);
+    position = (1180 750);
 }
 potential (Adversary_in_the_Middle | Credential_Access Collection)
 {
