@@ -24,7 +24,7 @@ For more detail,
 ## Reference
 [https://chrimson.github.io/GIGL](https://chrimson.github.io/GIGL)  
 [https://mitre-attack.github.io/attack-navigator](https://mitre-attack.github.io/attack-navigator)  
-[https://github.com/mitre-attack/attack-stix-data](https://github.com/mitre-attack/attack-stix-data)
+[https://github.com/mitre-attack/attack-stix-data](https://github.com/mitre-attack/attack-stix-data)  
 [https://sourceforge.net/projects/unbbayes](https://sourceforge.net/projects/unbbayes)  
 [https://pgmpy.org](https://pgmpy.org)
 
