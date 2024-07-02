@@ -22,7 +22,7 @@ For more detail,
 [Tutorial.pdf](Tutorial.pdf)
 
 ## Reference
-[https://chrimson.github.io/GIGL](https://chrimson.github.io/GIGL)
+[https://chrimson.github.io/GIGL](https://chrimson.github.io/GIGL)  
 [https://mitre-attack.github.io/attack-navigator](https://mitre-attack.github.io/attack-navigator)  
 [https://sourceforge.net/projects/unbbayes](https://sourceforge.net/projects/unbbayes)  
 [https://pgmpy.org](https://pgmpy.org)
