@@ -5,309 +5,309 @@ node T1557
 {
     states = ("False" "True");
     label = "T1557";
-    position = (447 601);
+    position = (276 903);
 }
 node T1583
 {
     states = ("False" "True");
     label = "T1583";
-    position = (472 592);
+    position = (506 456);
 }
 node T1071
 {
     states = ("False" "True");
     label = "T1071";
-    position = (349 154);
+    position = (70 547);
 }
 node T1659
 {
     states = ("False" "True");
     label = "T1659";
-    position = (106 82);
+    position = (745 402);
 }
 node T1010
 {
     states = ("False" "True");
     label = "T1010";
-    position = (814 345);
+    position = (968 311);
 }
 node T1092
 {
     states = ("False" "True");
     label = "T1092";
-    position = (704 62);
+    position = (316 405);
 }
 node T1595
 {
     states = ("False" "True");
     label = "T1595";
-    position = (0 534);
+    position = (297 752);
 }
 node T1548
 {
     states = ("False" "True");
     label = "T1548";
-    position = (587 663);
+    position = (201 805);
 }
 node T1087
 {
     states = ("False" "True");
     label = "T1087";
-    position = (937 959);
+    position = (761 180);
 }
 node T1059
 {
     states = ("False" "True");
     label = "T1059";
-    position = (10 853);
+    position = (297 103);
 }
 node T1020
 {
     states = ("False" "True");
     label = "T1020";
-    position = (395 562);
+    position = (347 299);
 }
 node T1210
 {
     states = ("False" "True");
     label = "T1210";
-    position = (259 105);
+    position = (315 514);
 }
 node T1098
 {
     states = ("False" "True");
     label = "T1098";
-    position = (17 298);
+    position = (575 735);
 }
 node T1531
 {
     states = ("False" "True");
     label = "T1531";
-    position = (390 439);
+    position = (340 161);
 }
 node T1650
 {
     states = ("False" "True");
     label = "T1650";
-    position = (204 228);
+    position = (137 912);
 }
 node T1651
 {
     states = ("False" "True");
     label = "T1651";
-    position = (134 280);
+    position = (904 650);
 }
 node T1134
 {
     states = ("False" "True");
     label = "T1134";
-    position = (600 613);
+    position = (779 364);
 }
 node Root_credential-access
 {
     states = ("False" "True");
     label = "Root_credential-access";
-    position = (936 625);
+    position = (467 349);
 }
 node Root_collection
 {
     states = ("False" "True");
     label = "Root_collection";
-    position = (172 0);
+    position = (273 257);
 }
 node Root_resource-development
 {
     states = ("False" "True");
     label = "Root_resource-development";
-    position = (950 198);
+    position = (892 687);
 }
 node Root_command-and-control
 {
     states = ("False" "True");
     label = "Root_command-and-control";
-    position = (409 888);
+    position = (657 547);
 }
 node Root_initial-access
 {
     states = ("False" "True");
     label = "Root_initial-access";
-    position = (652 591);
+    position = (503 274);
 }
 node Root_discovery
 {
     states = ("False" "True");
     label = "Root_discovery";
-    position = (588 780);
+    position = (14 859);
 }
 node Root_reconnaissance
 {
     states = ("False" "True");
     label = "Root_reconnaissance";
-    position = (718 997);
+    position = (624 552);
 }
 node Root_privilege-escalation
 {
     states = ("False" "True");
     label = "Root_privilege-escalation";
-    position = (29 185);
+    position = (362 833);
 }
 node Root_defense-evasion
 {
     states = ("False" "True");
     label = "Root_defense-evasion";
-    position = (425 169);
+    position = (258 722);
 }
 node Root_execution
 {
     states = ("False" "True");
     label = "Root_execution";
-    position = (193 226);
+    position = (722 476);
 }
 node Root_exfiltration
 {
     states = ("False" "True");
     label = "Root_exfiltration";
-    position = (191 867);
+    position = (234 388);
 }
 node Root_lateral-movement
 {
     states = ("False" "True");
     label = "Root_lateral-movement";
-    position = (974 455);
+    position = (784 552);
 }
 node Root_persistence
 {
     states = ("False" "True");
     label = "Root_persistence";
-    position = (956 57);
+    position = (16 216);
 }
 node Root_impact
 {
     states = ("False" "True");
     label = "Root_impact";
-    position = (816 278);
+    position = (484 321);
 }
-potential_for_attack (T1557 | Root_credential-access Root_collection)
+potential (T1557 | Root_credential-access Root_collection)
 {
     data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1583 | Root_resource-development)
+potential (T1583 | Root_resource-development)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1071 | Root_command-and-control)
+potential (T1071 | Root_command-and-control)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1659 | Root_command-and-control Root_initial-access)
+potential (T1659 | Root_command-and-control Root_initial-access)
 {
     data = (0.000000 0.000000 0.000000 0.000000 1.000000 1.000000 1.000000 1.000000);
 }
-potential_for_attack (T1010 | Root_discovery)
+potential (T1010 | Root_discovery)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1092 | Root_command-and-control)
+potential (T1092 | Root_command-and-control)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1595 | Root_reconnaissance)
+potential (T1595 | Root_reconnaissance)
 {
     data = (0.000000 0.000000 1.000000 1.000000);
 }
-potential_for_attack (T1548 | Root_privilege-escalation Root_defense-evasion)
+potential (T1548 | Root_privilege-escalation Root_defense-evasion)
 {
     data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1087 | Root_discovery)
+potential (T1087 | Root_discovery)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1059 | Root_execution)
+potential (T1059 | Root_execution)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1020 | Root_exfiltration)
+potential (T1020 | Root_exfiltration)
 {
     data = (0.000000 0.000000 1.000000 1.000000);
 }
-potential_for_attack (T1210 | Root_lateral-movement)
+potential (T1210 | Root_lateral-movement)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1098 | Root_privilege-escalation Root_persistence)
+potential (T1098 | Root_privilege-escalation Root_persistence)
 {
     data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1531 | Root_impact)
+potential (T1531 | Root_impact)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1650 | Root_resource-development)
+potential (T1650 | Root_resource-development)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1651 | Root_execution)
+potential (T1651 | Root_execution)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (T1134 | Root_privilege-escalation Root_defense-evasion)
+potential (T1134 | Root_privilege-escalation Root_defense-evasion)
 {
     data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
-potential_for_attack (Root_credential-access)
+potential (Root_credential-access)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_collection)
+potential (Root_collection)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_resource-development)
+potential (Root_resource-development)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_command-and-control)
+potential (Root_command-and-control)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_initial-access)
+potential (Root_initial-access)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_discovery)
+potential (Root_discovery)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_reconnaissance)
+potential (Root_reconnaissance)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_privilege-escalation)
+potential (Root_privilege-escalation)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_defense-evasion)
+potential (Root_defense-evasion)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_execution)
+potential (Root_execution)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_exfiltration)
+potential (Root_exfiltration)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_lateral-movement)
+potential (Root_lateral-movement)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_persistence)
+potential (Root_persistence)
 {
     data = (0.500000 0.500000);
 }
-potential_for_attack (Root_impact)
+potential (Root_impact)
 {
     data = (0.500000 0.500000);
 }
