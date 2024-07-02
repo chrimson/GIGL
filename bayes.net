@@ -1,0 +1,113 @@
+net
+{
+}
+node Boot_or_Logon_Initialization_Scripts
+{
+    states = ("False" "True");
+    label = "Boot_or_Logon_Initialization_Scripts";
+    position = (200 50);
+}
+node Replication_Through_Removable_Media
+{
+    states = ("False" "True");
+    label = "Replication_Through_Removable_Media";
+    position = (400 100);
+}
+node Credentials_from_Password_Stores
+{
+    states = ("False" "True");
+    label = "Credentials_from_Password_Stores";
+    position = (600 50);
+}
+node Compromise_Infrastructure
+{
+    states = ("False" "True");
+    label = "Compromise_Infrastructure";
+    position = (800 100);
+}
+node Persistence
+{
+    states = ("False" "True");
+    label = "Persistence";
+    position = (1000 50);
+}
+node Privilege_Escalation
+{
+    states = ("False" "True");
+    label = "Privilege_Escalation";
+    position = (1200 100);
+}
+node Lateral_Movement
+{
+    states = ("False" "True");
+    label = "Lateral_Movement";
+    position = (1400 50);
+}
+node Initial_Access
+{
+    states = ("False" "True");
+    label = "Initial_Access";
+    position = (270 250);
+}
+node Credential_Access
+{
+    states = ("False" "True");
+    label = "Credential_Access";
+    position = (470 200);
+}
+node Resource_Development
+{
+    states = ("False" "True");
+    label = "Resource_Development";
+    position = (670 250);
+}
+node Attack_State
+{
+    states = ("False" "True");
+    label = "Attack_State";
+    position = (800 450);
+}
+potential (Boot_or_Logon_Initialization_Scripts)
+{
+    data = (0.500000 0.500000);
+}
+potential (Replication_Through_Removable_Media)
+{
+    data = (0.500000 0.500000);
+}
+potential (Credentials_from_Password_Stores)
+{
+    data = (0.500000 0.500000);
+}
+potential (Compromise_Infrastructure)
+{
+    data = (0.500000 0.500000);
+}
+potential (Persistence | Boot_or_Logon_Initialization_Scripts)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential (Privilege_Escalation | Boot_or_Logon_Initialization_Scripts)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential (Lateral_Movement | Replication_Through_Removable_Media)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential (Initial_Access | Replication_Through_Removable_Media)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential (Credential_Access | Credentials_from_Password_Stores)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential (Resource_Development | Compromise_Infrastructure)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential (Attack_State | Persistence Privilege_Escalation Lateral_Movement Initial_Access Credential_Access Resource_Development)
+{
+    data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
+}

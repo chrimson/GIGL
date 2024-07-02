@@ -34,6 +34,12 @@ def create_bayesian_network(techniques):
         for technique in tactics[tactic]:
             model.add_edge(technique, tactic)
 
+    # Add final result node
+    attacked = "Attack_State"
+    model.add_node(attacked)
+    for tactic in tactics:
+        model.add_edge(tactic, attacked)
+
     # Add CPDs for techniques
     for technique in techniques:
         prob = assign_probability(technique['score'])
@@ -47,6 +53,13 @@ def create_bayesian_network(techniques):
         cpd_table[0] = 1 - cpd_table[1]
         cpd = TabularCPD(tactic, 2, cpd_table, evidence=parents, evidence_card=[2]*len(parents))
         model.add_cpds(cpd)
+
+    # Add CPD for result
+    parents = model.get_parents(attacked)
+    cpd_table = np.full((2, 2**len(parents)), prob)
+    cpd_table[0] = 1 - cpd_table[1]
+    cpd = TabularCPD(attacked, 2, cpd_table, evidence=parents, evidence_card=[2]*len(parents))
+    model.add_cpds(cpd)
 
     return model
 
@@ -70,6 +83,10 @@ def export_to_net(model, filename):
             else:
                 y = yb
                 offset = True
+            if node == "Attack_State":
+                x = 800
+                y = yb + 250
+
             f.write(f"node {node}\n")
             f.write("{\n")
             f.write("    states = (\"False\" \"True\");\n")
