@@ -5,309 +5,309 @@ node Adversary_in_the_Middle
 {
     states = ("False" "True");
     label = "Adversary_in_the_Middle";
-    position = (200 0);
+    position = (200 50);
 }
 node Acquire_Infrastructure
 {
     states = ("False" "True");
     label = "Acquire_Infrastructure";
-    position = (400 0);
+    position = (400 100);
 }
 node Application_Layer_Protocol
 {
     states = ("False" "True");
     label = "Application_Layer_Protocol";
-    position = (600 0);
+    position = (600 50);
 }
 node Content_Injection
 {
     states = ("False" "True");
     label = "Content_Injection";
-    position = (800 0);
+    position = (800 100);
 }
 node Application_Window_Discovery
 {
     states = ("False" "True");
     label = "Application_Window_Discovery";
-    position = (1000 0);
+    position = (1000 50);
 }
 node Communication_Through_Removable_Media
 {
     states = ("False" "True");
     label = "Communication_Through_Removable_Media";
-    position = (1200 0);
+    position = (1200 100);
 }
 node Active_Scanning
 {
     states = ("False" "True");
     label = "Active_Scanning";
-    position = (357 150);
+    position = (1400 50);
 }
 node Abuse_Elevation_Control_Mechanism
 {
     states = ("False" "True");
     label = "Abuse_Elevation_Control_Mechanism";
-    position = (557 150);
+    position = (286 250);
 }
 node Account_Discovery
 {
     states = ("False" "True");
     label = "Account_Discovery";
-    position = (757 150);
+    position = (486 200);
 }
 node Command_and_Scripting_Interpreter
 {
     states = ("False" "True");
     label = "Command_and_Scripting_Interpreter";
-    position = (957 150);
+    position = (686 250);
 }
 node Automated_Exfiltration
 {
     states = ("False" "True");
     label = "Automated_Exfiltration";
-    position = (1157 150);
+    position = (886 200);
 }
 node Exploitation_of_Remote_Services
 {
     states = ("False" "True");
     label = "Exploitation_of_Remote_Services";
-    position = (276 300);
+    position = (1086 250);
 }
 node Account_Manipulation
 {
     states = ("False" "True");
     label = "Account_Manipulation";
-    position = (476 300);
+    position = (1286 200);
 }
 node Account_Access_Removal
 {
     states = ("False" "True");
     label = "Account_Access_Removal";
-    position = (676 300);
+    position = (223 400);
 }
 node Acquire_Access
 {
     states = ("False" "True");
     label = "Acquire_Access";
-    position = (876 300);
+    position = (423 350);
 }
 node Cloud_Administration_Command
 {
     states = ("False" "True");
     label = "Cloud_Administration_Command";
-    position = (1076 300);
+    position = (623 400);
 }
 node Access_Token_Manipulation
 {
     states = ("False" "True");
     label = "Access_Token_Manipulation";
-    position = (253 450);
+    position = (823 350);
 }
 node Credential_Access
 {
     states = ("False" "True");
     label = "Credential_Access";
-    position = (453 450);
+    position = (1023 400);
 }
 node Collection
 {
     states = ("False" "True");
     label = "Collection";
-    position = (653 450);
+    position = (1223 350);
 }
 node Resource_Development
 {
     states = ("False" "True");
     label = "Resource_Development";
-    position = (853 450);
+    position = (1423 400);
 }
 node Command_And_Control
 {
     states = ("False" "True");
     label = "Command_And_Control";
-    position = (1053 450);
+    position = (306 500);
 }
 node Initial_Access
 {
     states = ("False" "True");
     label = "Initial_Access";
-    position = (342 600);
+    position = (506 550);
 }
 node Discovery
 {
     states = ("False" "True");
     label = "Discovery";
-    position = (542 600);
+    position = (706 500);
 }
 node Reconnaissance
 {
     states = ("False" "True");
     label = "Reconnaissance";
-    position = (742 600);
+    position = (906 550);
 }
 node Privilege_Escalation
 {
     states = ("False" "True");
     label = "Privilege_Escalation";
-    position = (942 600);
+    position = (1106 500);
 }
 node Defense_Evasion
 {
     states = ("False" "True");
     label = "Defense_Evasion";
-    position = (1142 600);
+    position = (1306 550);
 }
 node Execution
 {
     states = ("False" "True");
     label = "Execution";
-    position = (380 750);
+    position = (314 650);
 }
 node Exfiltration
 {
     states = ("False" "True");
     label = "Exfiltration";
-    position = (580 750);
+    position = (514 700);
 }
 node Lateral_Movement
 {
     states = ("False" "True");
     label = "Lateral_Movement";
-    position = (780 750);
+    position = (714 650);
 }
 node Persistence
 {
     states = ("False" "True");
     label = "Persistence";
-    position = (980 750);
+    position = (914 700);
 }
 node Impact
 {
     states = ("False" "True");
     label = "Impact";
-    position = (1180 750);
+    position = (1114 650);
 }
-potential (Adversary_in_the_Middle | Credential_Access Collection)
+potential (Adversary_in_the_Middle)
+{
+    data = (0.500000 0.500000);
+}
+potential (Acquire_Infrastructure)
+{
+    data = (0.500000 0.500000);
+}
+potential (Application_Layer_Protocol)
+{
+    data = (0.500000 0.500000);
+}
+potential (Content_Injection)
+{
+    data = (0.000000 1.000000);
+}
+potential (Application_Window_Discovery)
+{
+    data = (0.500000 0.500000);
+}
+potential (Communication_Through_Removable_Media)
+{
+    data = (0.500000 0.500000);
+}
+potential (Active_Scanning)
+{
+    data = (0.000000 1.000000);
+}
+potential (Abuse_Elevation_Control_Mechanism)
+{
+    data = (0.500000 0.500000);
+}
+potential (Account_Discovery)
+{
+    data = (0.500000 0.500000);
+}
+potential (Command_and_Scripting_Interpreter)
+{
+    data = (0.500000 0.500000);
+}
+potential (Automated_Exfiltration)
+{
+    data = (0.000000 1.000000);
+}
+potential (Exploitation_of_Remote_Services)
+{
+    data = (0.500000 0.500000);
+}
+potential (Account_Manipulation)
+{
+    data = (0.500000 0.500000);
+}
+potential (Account_Access_Removal)
+{
+    data = (0.500000 0.500000);
+}
+potential (Acquire_Access)
+{
+    data = (0.500000 0.500000);
+}
+potential (Cloud_Administration_Command)
+{
+    data = (0.500000 0.500000);
+}
+potential (Access_Token_Manipulation)
+{
+    data = (0.500000 0.500000);
+}
+potential (Credential_Access | Adversary_in_the_Middle)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential (Collection | Adversary_in_the_Middle)
+{
+    data = (0.500000 0.500000 0.500000 0.500000);
+}
+potential (Resource_Development | Acquire_Infrastructure Acquire_Access)
 {
     data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
-potential (Acquire_Infrastructure | Resource_Development)
+potential (Command_And_Control | Application_Layer_Protocol Content_Injection Communication_Through_Removable_Media)
+{
+    data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
+}
+potential (Initial_Access | Content_Injection)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential (Application_Layer_Protocol | Command_And_Control)
-{
-    data = (0.500000 0.500000 0.500000 0.500000);
-}
-potential (Content_Injection | Command_And_Control Initial_Access)
-{
-    data = (0.000000 0.000000 0.000000 0.000000 1.000000 1.000000 1.000000 1.000000);
-}
-potential (Application_Window_Discovery | Discovery)
-{
-    data = (0.500000 0.500000 0.500000 0.500000);
-}
-potential (Communication_Through_Removable_Media | Command_And_Control)
-{
-    data = (0.500000 0.500000 0.500000 0.500000);
-}
-potential (Active_Scanning | Reconnaissance)
-{
-    data = (0.000000 0.000000 1.000000 1.000000);
-}
-potential (Abuse_Elevation_Control_Mechanism | Privilege_Escalation Defense_Evasion)
+potential (Discovery | Application_Window_Discovery Account_Discovery)
 {
     data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
-potential (Account_Discovery | Discovery)
+potential (Reconnaissance | Active_Scanning)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential (Command_and_Scripting_Interpreter | Execution)
+potential (Privilege_Escalation | Abuse_Elevation_Control_Mechanism Account_Manipulation Access_Token_Manipulation)
 {
-    data = (0.500000 0.500000 0.500000 0.500000);
+    data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
-potential (Automated_Exfiltration | Exfiltration)
-{
-    data = (0.000000 0.000000 1.000000 1.000000);
-}
-potential (Exploitation_of_Remote_Services | Lateral_Movement)
-{
-    data = (0.500000 0.500000 0.500000 0.500000);
-}
-potential (Account_Manipulation | Privilege_Escalation Persistence)
+potential (Defense_Evasion | Abuse_Elevation_Control_Mechanism Access_Token_Manipulation)
 {
     data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
-potential (Account_Access_Removal | Impact)
-{
-    data = (0.500000 0.500000 0.500000 0.500000);
-}
-potential (Acquire_Access | Resource_Development)
-{
-    data = (0.500000 0.500000 0.500000 0.500000);
-}
-potential (Cloud_Administration_Command | Execution)
-{
-    data = (0.500000 0.500000 0.500000 0.500000);
-}
-potential (Access_Token_Manipulation | Privilege_Escalation Defense_Evasion)
+potential (Execution | Command_and_Scripting_Interpreter Cloud_Administration_Command)
 {
     data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
-potential (Credential_Access)
+potential (Exfiltration | Automated_Exfiltration)
 {
-    data = (0.500000 0.500000);
+    data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential (Collection)
+potential (Lateral_Movement | Exploitation_of_Remote_Services)
 {
-    data = (0.500000 0.500000);
+    data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential (Resource_Development)
+potential (Persistence | Account_Manipulation)
 {
-    data = (0.500000 0.500000);
+    data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential (Command_And_Control)
+potential (Impact | Account_Access_Removal)
 {
-    data = (0.500000 0.500000);
-}
-potential (Initial_Access)
-{
-    data = (0.500000 0.500000);
-}
-potential (Discovery)
-{
-    data = (0.500000 0.500000);
-}
-potential (Reconnaissance)
-{
-    data = (0.500000 0.500000);
-}
-potential (Privilege_Escalation)
-{
-    data = (0.500000 0.500000);
-}
-potential (Defense_Evasion)
-{
-    data = (0.500000 0.500000);
-}
-potential (Execution)
-{
-    data = (0.500000 0.500000);
-}
-potential (Exfiltration)
-{
-    data = (0.500000 0.500000);
-}
-potential (Lateral_Movement)
-{
-    data = (0.500000 0.500000);
-}
-potential (Persistence)
-{
-    data = (0.500000 0.500000);
-}
-potential (Impact)
-{
-    data = (0.500000 0.500000);
+    data = (0.500000 0.500000 0.500000 0.500000);
 }
