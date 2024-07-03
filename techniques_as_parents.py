@@ -5,6 +5,8 @@ from pgmpy.models import BayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.global_vars import logger
 
+risk = "Risk"
+
 def assign_probability(score):
     if score == 1:
         return 0.5  # 50% chance - used in one of two attacks
@@ -35,10 +37,9 @@ def create_bayesian_network(techniques):
             model.add_edge(technique, tactic)
 
     # Add final result node
-    attacked = "Attack_State"
-    model.add_node(attacked)
+    model.add_node(risk)
     for tactic in tactics:
-        model.add_edge(tactic, attacked)
+        model.add_edge(tactic, risk)
 
     # Add CPDs for techniques
     for technique in techniques:
@@ -55,10 +56,10 @@ def create_bayesian_network(techniques):
         model.add_cpds(cpd)
 
     # Add CPD for result
-    parents = model.get_parents(attacked)
+    parents = model.get_parents(risk)
     cpd_table = np.full((2, 2**len(parents)), prob)
     cpd_table[0] = 1 - cpd_table[1]
-    cpd = TabularCPD(attacked, 2, cpd_table, evidence=parents, evidence_card=[2]*len(parents))
+    cpd = TabularCPD(risk, 2, cpd_table, evidence=parents, evidence_card=[2]*len(parents))
     model.add_cpds(cpd)
 
     return model
@@ -83,7 +84,7 @@ def export_to_net(model, filename):
             else:
                 y = yb
                 offset = True
-            if node == "Attack_State":
+            if node == risk:
                 x = 800
                 y = yb + 250
 

@@ -47,24 +47,24 @@ node Initial_Access
 {
     states = ("False" "True");
     label = "Initial_Access";
-    position = (270 250);
+    position = (240 250);
 }
 node Credential_Access
 {
     states = ("False" "True");
     label = "Credential_Access";
-    position = (470 200);
+    position = (440 200);
 }
 node Resource_Development
 {
     states = ("False" "True");
     label = "Resource_Development";
-    position = (670 250);
+    position = (640 250);
 }
-node Attack_State
+node Risk
 {
     states = ("False" "True");
-    label = "Attack_State";
+    label = "Risk";
     position = (800 450);
 }
 potential (Boot_or_Logon_Initialization_Scripts)
@@ -107,7 +107,7 @@ potential (Resource_Development | Compromise_Infrastructure)
 {
     data = (0.500000 0.500000 0.500000 0.500000);
 }
-potential (Attack_State | Persistence Privilege_Escalation Lateral_Movement Initial_Access Credential_Access Resource_Development)
+potential (Risk | Persistence Privilege_Escalation Lateral_Movement Initial_Access Credential_Access Resource_Development)
 {
     data = (0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000 0.500000);
 }
