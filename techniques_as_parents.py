@@ -71,12 +71,20 @@ def export_to_net(model, filename):
         x = 0
         yb = 50
         offset = False
+        has_parents = False
+        new_level = False
 
-        # Write node definitions
+        # Determine node placement
         for node in model.nodes():
-            if x > 1250:
+            if not has_parents:
+                parents = model.get_parents(node)
+                if parents:
+                    has_parents = True
+                    new_level = True
+            if x > 1250 or new_level:
                 x = np.random.randint(0, 200)
                 yb += 150
+                new_level = False
             x += 200
             if offset:
                 y = yb + 50
@@ -88,6 +96,7 @@ def export_to_net(model, filename):
                 x = 800
                 y = yb + 250
 
+            # Write node definitions
             f.write(f"node {node}\n")
             f.write("{\n")
             f.write("    states = (\"False\" \"True\");\n")
