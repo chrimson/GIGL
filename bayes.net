@@ -41,43 +41,43 @@ node Persistence
 {
     states = ("False" "True");
     label = "Persistence";
-    position = (379 200);
+    position = (222 200);
 }
 node Privilege_Escalation
 {
     states = ("False" "True");
     label = "Privilege_Escalation";
-    position = (579 250);
+    position = (422 250);
 }
 node Lateral_Movement
 {
     states = ("False" "True");
     label = "Lateral_Movement";
-    position = (779 200);
+    position = (622 200);
 }
 node Initial_Access
 {
     states = ("False" "True");
     label = "Initial_Access";
-    position = (979 250);
+    position = (822 250);
 }
 node Credential_Access
 {
     states = ("False" "True");
     label = "Credential_Access";
-    position = (1179 200);
+    position = (1022 200);
 }
 node Resource_Development
 {
     states = ("False" "True");
     label = "Resource_Development";
-    position = (1379 250);
+    position = (1222 250);
 }
 node Defense_Evasion
 {
     states = ("False" "True");
     label = "Defense_Evasion";
-    position = (323 350);
+    position = (1422 200);
 }
 node Risk
 {
