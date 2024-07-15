@@ -18,6 +18,7 @@ def assign_probability(score):
         return 0.0  # 0% chance - not used in either attack
 
 def create_bayesian_network(techniques):
+    and_tactics = ['Credential_Access', 'Persistence', 'Lateral_Movement']
     model = BayesianNetwork()
 
     # Group techniques by tactic
@@ -46,18 +47,49 @@ def create_bayesian_network(techniques):
         prob = assign_probability(technique['score'])
         cpd = TabularCPD(technique['name'], 2, [[1-prob], [prob]])
         model.add_cpds(cpd)
-    
-    # Add CPD for tactics
+
+    # Add CPDs for tactics with AND/OR logic
     for tactic in tactics:
         parents = model.get_parents(tactic)
-        cpd_table = np.full((2, 2**len(parents)), prob)
-        cpd_table[0] = 1 - cpd_table[1]
+        num_parents = len(parents)
+        cpd_table = np.zeros((2, 2**num_parents))
+
+        if tactic in and_tactics:
+            # AND logic for specific tactics
+            for i in range(2**num_parents):
+                bin_rep = format(i, '0' + str(num_parents) + 'b')
+                if all(int(bit) for bit in bin_rep):
+                    cpd_table[1][i] = 1  # True only when all parents are True
+                    cpd_table[0][i] = 0
+                else:
+                    cpd_table[1][i] = 0
+                    cpd_table[0][i] = 1 # False in all other cases
+        else:
+            # OR logic for other tactics
+            for i in range(2**num_parents):
+                bin_rep = format(i, '0' + str(num_parents) + 'b')
+                if any(int(bit) for bit in bin_rep):
+                    cpd_table[1][i] = 1  # True if any parent is True
+                    cpd_table[0][i] = 0
+                else:
+                    cpd_table[1][i] = 0
+                    cpd_table[0][i] = 1  # False if all parents are False
+
         cpd = TabularCPD(tactic, 2, cpd_table, evidence=parents, evidence_card=[2]*len(parents))
         model.add_cpds(cpd)
 
-    # Add CPD for result
+    # Add OR logic CPD for the risk node
     parents = model.get_parents(risk)
-    cpd_table = np.full((2, 2**len(parents)), prob)
+    num_parents = len(parents)
+    cpd_table = np.zeros((2, 2**num_parents))
+
+    for i in range(2**num_parents):
+        bin_rep = format(i, '0' + str(num_parents) + 'b')
+        if any(int(bit) for bit in bin_rep):
+            cpd_table[1][i] = 1.0
+        else:
+            cpd_table[1][i] = 0.0
+
     cpd_table[0] = 1 - cpd_table[1]
     cpd = TabularCPD(risk, 2, cpd_table, evidence=parents, evidence_card=[2]*len(parents))
     model.add_cpds(cpd)
@@ -113,7 +145,14 @@ def export_to_net(model, filename):
                 f.write(f" | {' '.join(parents)}")
             f.write(")\n{\n")
             f.write("    data = ")
-            probs = cpd.values.flatten()
+            
+            # Flattening the CPT values for .net format
+            values = cpd.values
+            if values.ndim == 1:  # No parents
+                probs = values.flatten()
+            else:
+                probs = np.transpose(values, tuple(range(values.ndim - 1, -1, -1))).flatten()
+            
             f.write("(" + " ".join(f"{p:.6f}" for p in probs) + ")")
             f.write(";\n}\n")
 
@@ -123,8 +162,10 @@ def main():
     with open(json_file, 'r') as f:
         data = json.load(f)
 
+    # Make lookup table for technique names of IDs
+    print("Mapping techniques from STIX")
     tech_map = {}
-    stix_file = 'enterprise-attack-15.1.json'
+    stix_file = 'enterprise-attack.json'
     with open(stix_file, 'r') as f:
         stix = json.load(f)
     for object in stix['objects']:
