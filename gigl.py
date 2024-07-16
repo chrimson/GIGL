@@ -26,7 +26,7 @@ def create_bayesian_network(techniques):
     for technique in techniques:
         tech_id = technique['name']
         model.add_node(tech_id)
-        tactic = technique['tactic'].replace('-', '_').title()
+        tactic = technique['tactic'].replace('-', '_').replace('/', '_').title()
         if tactic not in tactics:
             tactics[tactic] = []
         tactics[tactic].append(tech_id)
@@ -172,7 +172,7 @@ def main():
         if object['type'] == 'attack-pattern':
             for xref in object['external_references']:
                 if xref['source_name'] == 'mitre-attack':
-                    tech_map[xref['external_id']] = object['name'].replace(' ', '_').replace('-', '_')
+                    tech_map[xref['external_id']] = object['name'].replace(' ', '_').replace('-', '_').replace('/', '_')
 
     techniques = data['techniques']
     for technique in techniques:
